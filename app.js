@@ -9,7 +9,7 @@ const __dirName = url.fileURLToPath(new URL('.', import.meta.url));
 app.use(express.static(path.join(__dirName, '/public')));
 
 app.get('/', (req, res) => {
-    res.redirect('/Login/login.html');
+    res.redirect('/Login/loginAuth.html');
 });
 
 app.listen(3000, () => {
