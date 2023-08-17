@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js" integrity="sha512-CMF3tQtjOoOJoOKlsS7/2loJlkyctwzSoDK/S40iAB+MqWSaf50uObGQSk5Ny/gfRhRCjNLvoxuCvdnERU4WGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="profileManagement.js"></script>
+    <script defer src="../pagination.js"></script>
+    <link rel="stylesheet" href="../helper.css">
+    <link rel="stylesheet" href="profileManagement.css">
+    <title>Profile Management</title>
+</head>
+<body>
+    <div class="container flex_column">
+        <nav class="flex_row space_between center">
+            <img src="../images/Logo.png" alt="logo">
+            <div class="right_section flex_row space_between center" onclick="showPopup(event)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.6667 14.6667H15.6133L15.24 14.3067C16.5467 12.7867 17.3333 10.8133 17.3333 8.66667C17.3333 3.88 13.4533 0 8.66667 0C3.88 0 0 3.88 0 8.66667C0 13.4533 3.88 17.3333 8.66667 17.3333C10.8133 17.3333 12.7867 16.5467 14.3067 15.24L14.6667 15.6133V16.6667L21.3333 23.32L23.32 21.3333L16.6667 14.6667ZM8.66667 14.6667C5.34667 14.6667 2.66667 11.9867 2.66667 8.66667C2.66667 5.34667 5.34667 2.66667 8.66667 2.66667C11.9867 2.66667 14.6667 5.34667 14.6667 8.66667C14.6667 11.9867 11.9867 14.6667 8.66667 14.6667Z" fill="#778087"/>
+                </svg>
+                <div class="profile_img"></div>
+                <p class="username">John</p>
+            </div>
+            <div class="menu flex_column">
+                <div class="item flex_row center" onclick="window.location.href = '../Profile/profileAdmin.html'">
+                    <img src="../images/account_circle_green.png" alt="">
+                    <p>Profile</p>
+                </div>
+                <div class="item flex_row center" onclick="window.location.href = '../Profile/profile.html'; localStorage.setItem('password', 'true')">
+                    <img src="../images/password_green.png" alt="">
+                    <p>Change Password</p>
+                </div>
+                <div class="item flex_row center" onclick="window.location.href = '../Notification/notificationAdmin.html'">
+                    <img src="../images/notifications_green.png" alt="">
+                    <p>Notification Settings</p>
+                </div>
+                <div class="item flex_row center" onclick="window.location.href = '../Login/login.html'">
+                    <img src="../images/logout_green.png" alt="">
+                    <p>Logout</p>
+                </div>
+            </div>
+        </nav>
+        <div class="content_wrapper flex_row width_full">
+            <div class="notifications_wrapper flex_column">
+                <div class="notification_header flex_row space_between center">
+                    <p>Notifications</p>
+                    <p onclick="window.location.href = '../All Notifications/notificationAdmin.html'">View All</p>
+                </div>
+                <div class="wrapper flex_column">
+                    <p class="when">Today</p>
+                    <div class="notifications flex_column">
+                        <div class="notification flex_row space_between center">
+                            <div class="left_section flex_row center">
+                                <div class="image"></div>
+                                <div class="text flex_column space_between">
+                                    <div class="name">Lorem, ipsum.</div>
+                                    <div class="time">04:25 PM</div>
+                                </div>
+                            </div>
+                            <div class="right_section flex_row justify_center center">
+                                <img src="../images/delete_outline_black_24dp 1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="notification flex_row space_between center">
+                            <div class="left_section flex_row center">
+                                <div class="image"></div>
+                                <div class="text flex_column space_between">
+                                    <div class="name">Lorem, ipsum.</div>
+                                    <div class="time">04:25 PM</div>
+                                </div>
+                            </div>
+                            <div class="right_section flex_row justify_center center">
+                                <img src="../images/delete_outline_black_24dp 1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper flex_column">
+                    <p class="when">Yesterday</p>
+                    <div class="notifications flex_column">
+                        <div class="notification flex_row space_between center">
+                            <div class="left_section flex_row center">
+                                <div class="image"></div>
+                                <div class="text flex_column space_between">
+                                    <div class="name">Lorem, ipsum.</div>
+                                    <div class="time">04:25 PM</div>
+                                </div>
+                            </div>
+                            <div class="right_section flex_row justify_center center">
+                                <img src="../images/delete_outline_black_24dp 1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar flex_column">
+                <ul>
+                    <li class="flex_column justify_center">
+                        <a href="../Clinic Dashboard/dashboardAdmin.html" class="flex_row center">
+                            <img src="../images/icons8-dashboard-layout-48 (1) 2.png" alt="dashboard">
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="active flex_column justify_center">
+                        <a href="../Profile Management/profilManagement.html" class="flex_row center">
+                            <img src="../images/icons8-management-48 2.png" alt="dashboard">
+                            <p>Profile Management</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Training/training.html" class="flex_row center">
+                            <img src="../images/icons8-training-48.png" alt="dashboard">
+                            <p>Training</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Career/career.html" class="flex_row center">
+                            <img src="../images/icons8-attract-customers.png" alt="dashboard">
+                            <p>Kareer</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Campaign/campaign.html" class="flex_row center">
+                            <img src="../images/icons8-commercial.png" alt="dashboard">
+                            <p>Campaign</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Klinic/klinic.html" class="flex_row center">
+                            <img src="../images/icons8_clinic.png" alt="dashboard">
+                            <p>Klinic</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../CMS/content.html" class="flex_row center">
+                            <img src="../images/content_white.png" alt="dashboard">
+                            <p>CMS</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Billing/billing.html" class="flex_row center">
+                            <img src="../images/icons8-check-dollar.png" alt="dashboard">
+                            <p>Billing</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Report/report.html" class="flex_row center">
+                            <img src="../images/icons8-report.png" alt="dashboard">
+                            <p>Report</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Support/support.html" class="flex_row center">
+                            <img src="../images/icons8-help.png" alt="dashboard">
+                            <p>Support Management</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="bottom_buttons flex_row space_between center width_full">
+                    <div class="image" onclick="showNotifications(event)">
+                        <img src="../images/bell.png" alt="">
+                        <span></span>
+                    </div>
+                    <div class="image">
+                        <img src="../images/shield.png" alt="">
+                    </div>
+                    <div class="image">
+                        <img src="../images/globe.png" alt="">
+                    </div>
+                    <div class="image" onclick="window.location.href = '../Login/loginAdmin.html'">
+                        <img src="../images/icons8-logout-64 1.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="popup flex_column">
+                <div class="header flex_row space_between center">
+                    <p>Athlete Details</p>
+                    <button onclick="closeDetails(event)">Close</button>
+                </div>
+                <div class="form flex_row">
+                    <div class="form_left_section flex_column center">
+                        <div class="image">
+                            <input type="file">
+                        </div>
+                        <button>Delete</button>
+                        <button>Block</button>
+                    </div>
+                    <div class="form_right_section flex_column">
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Name</p>
+                                <input type="text" placeholder="Alex" disabled>
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Age</p>
+                                <input type="text" placeholder="23" disabled>
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Email</p>
+                                <input type="text" value="astid@gmail.com">
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Contact</p>
+                                <div class="contact flex_row space_between center">
+                                    <div class="country_code">
+                                        <input type="text" placeholder="+81">
+                                    </div>
+                                    <div class="number">
+                                        <input type="text" placeholder="25489662256">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Location</p>
+                                <input type="text" placeholder="-" disabled>
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Sport</p>
+                                <input type="text" placeholder="Tennis" disabled>
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Gender</p>
+                                <div class="select">
+                                    <p class="selected_item flex_column justify_center">Male</p>
+                                    <div class="select_menu flex_column">
+                                        <p class="item flex_column justify_center">Male</p>
+                                        <p class="item flex_column justify_center">Female</p>
+                                        <p class="item flex_column justify_center">Won't Disclose</p>
+                                    </div>
+                                </div>
+                                <!-- <input type="text" placeholder="Male"> -->
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Height</p>
+                                <input type="text" placeholder="5'7" disabled>
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Weight</p>
+                                <input type="text" placeholder="63" disabled>
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Status</p>
+                                <input type="text" placeholder="Recruited" id="status">
+                            </div>
+                        </div>
+                        <div class="full_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Evaluation</p>
+                                <textarea></textarea>
+                            </div>
+                        </div>
+                        <div class="buttons flex_row center">
+                            <button>Save</button>
+                            <button onclick="document.querySelector('.popup.flex_column').style.display = 'none';">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup flex_column" id="patient_details">
+                <div class="header flex_row space_between center">
+                    <p>Expert Details</p>
+                    <button onclick="closeDetails(event)">Close</button>
+                </div>
+                <div class="form flex_row">
+                    <div class="form_left_section flex_column center">
+                        <div class="image">
+                            <input type="file">
+                        </div>
+                        <button>Delete</button>
+                        <button>Block</button>
+                    </div>
+                    <div class="form_right_section flex_column">
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Name</p>
+                                <input type="text" value="Dr. Astrid Helena">
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Gender</p>
+                                <div class="select">
+                                    <p class="selected_item flex_column justify_center">Male</p>
+                                    <div class="select_menu flex_column">
+                                        <p class="item flex_column justify_center">Male</p>
+                                        <p class="item flex_column justify_center">Female</p>
+                                        <p class="item flex_column justify_center">Won't Disclose</p>
+                                    </div>
+                                </div>
+                                <!-- <input type="text" placeholder="Male"> -->
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Email</p>
+                                <input type="text" value="astid@gmail.com">
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Contact</p>
+                                <div class="contact flex_row space_between center">
+                                    <div class="country_code">
+                                        <input type="text" placeholder="+81">
+                                    </div>
+                                    <div class="number">
+                                        <input type="text" placeholder="25489662256">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Location</p>
+                                <input type="text" placeholder="-" disabled>
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Sports</p>
+                                <input type="text" placeholder="Tennis" disabled>
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Experience</p>
+                                <input type="text" placeholder="7 Years" disabled>
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Position</p>
+                                <input type="text" placeholder="Head Coach" disabled>
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Level</p>
+                                <input type="text" placeholder="NAIA" disabled>
+                            </div>
+                            <div class="input flex_row center">
+                                <p>School / Team Name</p>
+                                <input type="text" placeholder="St. Marry of the Woods College.IN" id="status">
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Recruitment</p>
+                                <input type="text" placeholder="12" disabled>
+                            </div>
+                        </div>
+                        <div class="buttons flex_row center">
+                            <button>Save</button>
+                            <button onclick="document.querySelector('.popup.flex_column').style.display = 'none';">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right_section flex_column">
+                <div class="header flex_row space_between">
+                    <div class="left_side flex_row space_between center" onclick="selectTab(event)">
+                        <p class="active">Athletes</p>
+                        <p>Expert</p>
+                    </div>
+                    <div class="right_side flex_row space_between center">
+                        <input type="text" placeholder="Search">
+                    </div>
+                </div>
+                <div class="appointments flex_column box">
+                    <h1>List Of All Athletes</h1>
+                    <div class="header flex_row space_between center">
+                        <p>Name</p>
+                        <p>Age</p>
+                        <p>Sport</p>
+                        <p>Gender</p>
+                        <p>Location</p>
+                        <p>Email</p>
+                        <p>Action</p>
+                    </div>
+                    <div class="values flex_row space_between center">
+                        <div class="user flex_row space_between center">
+                            <span></span>
+                            <p>Alex</p>
+                        </div>
+                        <p>23</p>
+                        <p>Tennis</p>
+                        <p>Male</p>
+                        <p>-</p>
+                        <p>alex@gmail.com</p>
+                        <div class="action flex_row space_between center">
+                            <button onclick="showDetails(event)"><img src="../images/visibility_black_24dp 5.png" alt=""></button>
+                            <button><img src="../images/delete_outline_black_24dp 1.png" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="values flex_row space_between center">
+                        <div class="user flex_row space_between center">
+                            <span></span>
+                            <p>Alex</p>
+                        </div>
+                        <p>23</p>
+                        <p>Tennis</p>
+                        <p>Male</p>
+                        <p>-</p>
+                        <p>alex@gmail.com</p>
+                        <div class="action flex_row space_between center">
+                            <button onclick="showDetails(event)"><img src="../images/visibility_black_24dp 5.png" alt=""></button>
+                            <button><img src="../images/delete_outline_black_24dp 1.png" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="values flex_row space_between center">
+                        <div class="user flex_row space_between center">
+                            <span></span>
+                            <p>Alex</p>
+                        </div>
+                        <p>23</p>
+                        <p>Tennis</p>
+                        <p>Male</p>
+                        <p>-</p>
+                        <p>alex@gmail.com</p>
+                        <div class="action flex_row space_between center">
+                            <button onclick="showDetails(event)"><img src="../images/visibility_black_24dp 5.png" alt=""></button>
+                            <button><img src="../images/delete_outline_black_24dp 1.png" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="values flex_row space_between center">
+                        <div class="user flex_row space_between center">
+                            <span></span>
+                            <p>Alex</p>
+                        </div>
+                        <p>23</p>
+                        <p>Tennis</p>
+                        <p>Male</p>
+                        <p>-</p>
+                        <p>alex@gmail.com</p>
+                        <div class="action flex_row space_between center">
+                            <button onclick="showDetails(event)"><img src="../images/visibility_black_24dp 5.png" alt=""></button>
+                            <button><img src="../images/delete_outline_black_24dp 1.png" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="values flex_row space_between center">
+                        <div class="user flex_row space_between center">
+                            <span></span>
+                            <p>Alex</p>
+                        </div>
+                        <p>23</p>
+                        <p>Tennis</p>
+                        <p>Male</p>
+                        <p>-</p>
+                        <p>alex@gmail.com</p>
+                        <div class="action flex_row space_between center">
+                            <button onclick="showDetails(event)"><img src="../images/visibility_black_24dp 5.png" alt=""></button>
+                            <button><img src="../images/delete_outline_black_24dp 1.png" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer flex_row space_between center">
+                    <p>Showing <span id="current">05</span> Of <span id="total">05</span> Entries</p>
+                    <div class="pagination flex_row center" onclick="changePage(event)">
+                        <button id="prev">Prev</button>
+                        <button class="active" onclick="showPage(event, '.appointments.flex_column.box')">1</button>
+                        <button onclick="showPage(event, '.appointments.flex_column.box')">2</button>
+                        <button id="next">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>window.addEventListener('resize', () => { console.log(window.innerWidth); })</script>
+</body>
+</html>

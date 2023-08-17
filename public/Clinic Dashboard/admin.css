@@ -1,0 +1,313 @@
+.container .content_wrapper .stat .bottom_row p:nth-child(1) {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.container .content_wrapper .stat:nth-child(4) {
+    background: #FFF;
+    color: #19214F;
+}
+
+.container .content_wrapper .statistics {
+    width: 40%;
+    padding: 1.5rem;
+    border-radius: 0.6rem;
+    background: #00A962;
+    color: #FFF;
+}
+
+.container .content_wrapper .statistics .header h1 {
+    font-size: 1.3rem;
+}
+
+.container .content_wrapper .statistics .date_picker {
+    width: 25%;
+    border: 2px solid #FFF;
+    background: #FFF;
+    color: #9699A0;
+}
+
+.container .content_wrapper .date_picker svg,
+.container .content_wrapper .search svg {
+    fill: #FFF;
+}
+
+.container .content_wrapper .statistics .search {
+    width: 100%;
+    position: relative;
+    border-radius: 0.6rem;
+    margin: 1rem 0 1rem 0;
+}
+
+.container .content_wrapper .statistics .search input {
+    width: 100%;
+    border-radius: 0.6rem;
+    height: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: transparent;
+    color: #FFF;
+    border: 2px solid #FFF;
+}
+
+.container .content_wrapper .statistics .search input::placeholder {
+    color: #FFF;
+}
+
+.container .content_wrapper .statistics .search img {
+    position: absolute;
+    right: 0.5rem;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.container .content_wrapper .statistics .summary {
+    margin: 0 0 1rem 0;
+}
+
+.container .content_wrapper .statistics .summary p {
+    margin: 0 0 0.5rem 0;
+}
+
+.container .content_wrapper .statistics .summary span.value {
+    width: 100%;
+    padding: 0.2rem;
+    background: #DFE0E0;
+}
+
+.container .content_wrapper .statistics .summary:nth-child(4) .values .first_value,
+.container .content_wrapper .statistics .summary:nth-child(5) .values .first_value {
+    width: 58%;
+}
+
+.container .content_wrapper .statistics .summary:nth-child(4) .values span,
+.container .content_wrapper .statistics .summary:nth-child(5) .values span {
+    background-color: #FCFCFC;
+    padding: 0.2rem;
+    width: 100%;
+    color: #000;
+    display: block;
+    text-align: center;
+}
+
+.container .content_wrapper .statistics .summary:nth-child(4) .values .second_value,
+.container .content_wrapper .statistics .summary:nth-child(5) .values .second_value {
+    width: 42%;
+}
+
+.container .content_wrapper .statistics .summary:nth-child(4) .values .second_value span,
+.container .content_wrapper .statistics .summary:nth-child(5) .values .second_value span {
+    background: #DFE0E0;
+}
+
+.container .content_wrapper .statistics .summary:nth-child(5) .values .first_value {
+    width: 49%;
+}
+
+.container .content_wrapper .statistics .summary:nth-child(5) .values .second_value {
+    width: 51%;
+}
+
+.container .content_wrapper .bar_area .bar {
+    width: 49%;
+}
+
+.container .content_wrapper .bar_area .header .date_picker {
+    width: fit-content;
+}
+.container .content_wrapper .bar_area .area {
+    width: 49%;
+}
+
+.container .content_wrapper .appointments {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0 0 0;
+}
+
+.container .content_wrapper .appointments .header,
+.container .content_wrapper .appointments .values {
+    height: 3rem;
+    color: #FFF;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #00A962;
+    margin: 1rem 0 0 0;
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+}
+
+.container .content_wrapper .appointments .values {
+    background: #FFF;
+    color: #464646;
+    box-shadow: 0px 5px 6px rgba(0, 169, 98, 0.5);
+    height: 5rem;
+}
+
+.container .content_wrapper .appointments .header p:nth-child(1),
+.container .content_wrapper .appointments .values p:nth-child(1) {
+    width: 20%;
+    text-align: center;
+}
+
+.container .content_wrapper .appointments .header p:nth-child(2),
+.container .content_wrapper .appointments .values p:nth-child(2) {
+    width: 20%;
+    text-align: center;
+}
+
+.container .content_wrapper .appointments .header p:nth-child(3),
+.container .content_wrapper .appointments .values p:nth-child(3) {
+    text-align: center;
+    width: 20%;
+}
+
+.container .content_wrapper .appointments .header p:nth-child(4),
+.container .content_wrapper .appointments .values p:nth-child(4) {
+    width: 15%;
+}
+
+.container .content_wrapper .appointments .header p:nth-child(5),
+.container .content_wrapper .appointments .values p:nth-child(5) {
+    width: 15%;
+}
+
+.container .content_wrapper .appointments .header p:nth-child(6),
+.container .content_wrapper .appointments .values div {
+    text-align: center;
+    width: 10%;
+}
+
+.container .content_wrapper .appointments .values div button {
+    background: none;
+    padding: 0;
+}
+
+.container .content_wrapper .appointments .values div button:nth-child(1) {
+    margin: 0 1rem 0 0;
+}
+
+.container .content_wrapper .appointments .values span {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.3rem;
+    background: #9699A0;
+}
+
+.container .content_wrapper .appointments .pagination {
+    position: absolute;
+    top: 104%;
+    right: 0;
+    padding-bottom: 2rem;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container .content_wrapper .stat .bottom_row p:nth-child(1) {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container .content_wrapper .stats .stat {
+        width: 15rem;
+    }
+
+    .container .content_wrapper .sidebar {
+        width: 30%;
+    }
+
+    .container .content_wrapper .right_section {
+        left: 30%;
+        width: 70%;
+    }
+
+    .container .content_wrapper .stat .bottom_row p:nth-child(1) {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .container .content_wrapper .statistics {
+        height: fit-content;
+    }
+
+    .container .content_wrapper .chart_section {
+        flex-direction: column;
+    }
+
+    .container .content_wrapper .chart_section .area_chart {
+        width: 100%;
+        margin: 0 0 2rem 0;
+    }
+
+    .container .content_wrapper .chart_section .statistics {
+        width: 80%;
+        margin: 0 0 2rem 0;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container .content_wrapper .stats .stat {
+        width: 100%;
+    }
+
+    .container .content_wrapper .sidebar {
+        width: 30%;
+    }
+
+    .container .content_wrapper .right_section {
+        left: 30%;
+        width: 70%;
+    }
+
+    .container .content_wrapper .stat .bottom_row p:nth-child(1) {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .container .content_wrapper .statistics {
+        height: fit-content;
+    }
+
+    .container .content_wrapper .chart_section {
+        flex-direction: column;
+    }
+
+    .container .content_wrapper .chart_section .area_chart {
+        width: 100%;
+        margin: 0 0 2rem 0;
+    }
+
+    .container .content_wrapper .chart_section .statistics {
+        width: 90%;
+        margin: 0 0 2rem 0;
+    }
+
+    .container .content_wrapper .bar_area {
+        flex-direction: column;
+    }
+
+    .container .content_wrapper .bar_area .bar,
+    .container .content_wrapper .bar_area .area {
+        width: 100%;
+    }
+}

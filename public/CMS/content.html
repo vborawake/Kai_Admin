@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="content.js"></script>
+    <script defer src="../pagination.js"></script>
+    <link rel="stylesheet" href="../helper.css">
+    <link rel="stylesheet" href="content.css">
+    <title>Training</title>
+</head>
+<body>
+    <div class="container flex_column">
+        <nav class="flex_row space_between center">
+            <img src="../images/Logo.png" alt="logo">
+            <div class="right_section flex_row space_between center" onclick="showPopup(event)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.6667 14.6667H15.6133L15.24 14.3067C16.5467 12.7867 17.3333 10.8133 17.3333 8.66667C17.3333 3.88 13.4533 0 8.66667 0C3.88 0 0 3.88 0 8.66667C0 13.4533 3.88 17.3333 8.66667 17.3333C10.8133 17.3333 12.7867 16.5467 14.3067 15.24L14.6667 15.6133V16.6667L21.3333 23.32L23.32 21.3333L16.6667 14.6667ZM8.66667 14.6667C5.34667 14.6667 2.66667 11.9867 2.66667 8.66667C2.66667 5.34667 5.34667 2.66667 8.66667 2.66667C11.9867 2.66667 14.6667 5.34667 14.6667 8.66667C14.6667 11.9867 11.9867 14.6667 8.66667 14.6667Z" fill="#778087"/>
+                </svg>
+                <div class="profile_img"></div>
+                <p class="username">John</p>
+            </div>
+            <div class="menu flex_column">
+                <div class="item flex_row center" onclick="window.location.href = '../Profile/profileAdmin.html'">
+                    <img src="../images/account_circle_green.png" alt="">
+                    <p>Profile</p>
+                </div>
+                <div class="item flex_row center" onclick="window.location.href = '../Profile/profileAdmin.html'; localStorage.setItem('password', 'true')">
+                    <img src="../images/password_green.png" alt="">
+                    <p>Change Password</p>
+                </div>
+                <div class="item flex_row center" onclick="window.location.href = '../Notification/notificationAdmin.html'">
+                    <img src="../images/notifications_green.png" alt="">
+                    <p>Notification Settings</p>
+                </div>
+                <div class="item flex_row center" onclick="window.location.href = '../Login/login.html'">
+                    <img src="../images/logout_green.png" alt="">
+                    <p>Logout</p>
+                </div>
+            </div>
+        </nav>
+        <div class="content_wrapper flex_row width_full">
+            <div class="notifications_wrapper flex_column">
+                <div class="notification_header flex_row space_between center">
+                    <p>Notifications</p>
+                    <p onclick="window.location.href = '../All Notifications/notificationAdmin.html'">View All</p>
+                </div>
+                <div class="wrapper flex_column">
+                    <p class="when">Today</p>
+                    <div class="notifications flex_column">
+                        <div class="notification flex_row space_between center">
+                            <div class="left_section flex_row center">
+                                <div class="image"></div>
+                                <div class="text flex_column space_between">
+                                    <div class="name">Lorem, ipsum.</div>
+                                    <div class="time">04:25 PM</div>
+                                </div>
+                            </div>
+                            <div class="right_section flex_row justify_center center">
+                                <img src="../images/delete_outline_black_24dp 1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="notification flex_row space_between center">
+                            <div class="left_section flex_row center">
+                                <div class="image"></div>
+                                <div class="text flex_column space_between">
+                                    <div class="name">Lorem, ipsum.</div>
+                                    <div class="time">04:25 PM</div>
+                                </div>
+                            </div>
+                            <div class="right_section flex_row justify_center center">
+                                <img src="../images/delete_outline_black_24dp 1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper flex_column">
+                    <p class="when">Yesterday</p>
+                    <div class="notifications flex_column">
+                        <div class="notification flex_row space_between center">
+                            <div class="left_section flex_row center">
+                                <div class="image"></div>
+                                <div class="text flex_column space_between">
+                                    <div class="name">Lorem, ipsum.</div>
+                                    <div class="time">04:25 PM</div>
+                                </div>
+                            </div>
+                            <div class="right_section flex_row justify_center center">
+                                <img src="../images/delete_outline_black_24dp 1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar flex_column">
+                <ul>
+                    <li class="flex_column justify_center">
+                        <a href="../Clinic Dashboard/dashboardAdmin.html" class="flex_row center">
+                            <img src="../images/icons8-dashboard-layout-48 (1) 2.png" alt="dashboard">
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Profile Management/profilManagement.html" class="flex_row center">
+                            <img src="../images/icons8-management-48 (1) 1.png" alt="dashboard">
+                            <p>Profile Management</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Training/training.html" class="flex_row center">
+                            <img src="../images/icons8-training-48.png" alt="dashboard">
+                            <p>Training</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Career/career.html" class="flex_row center">
+                            <img src="../images/icons8-attract-customers.png" alt="dashboard">
+                            <p>Kareer</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Campaign/campaign.html" class="flex_row center">
+                            <img src="../images/icons8-commercial.png" alt="dashboard">
+                            <p>Campaign</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Klinic/klinic.html" class="flex_row center">
+                            <img src="../images/icons8_clinic.png" alt="dashboard">
+                            <p>Klinic</p>
+                        </a>
+                    </li>
+                    <li class="active flex_column justify_center">
+                        <a href="../CMS/content.html" class="flex_row center">
+                            <img src="../images/content.png" alt="dashboard">
+                            <p>CMS</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Billing/billing.html" class="flex_row center">
+                            <img src="../images/icons8-check-dollar.png" alt="dashboard">
+                            <p>Billing</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Report/report.html" class="flex_row center">
+                            <img src="../images/icons8-report.png" alt="dashboard">
+                            <p>Report</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Support/support.html" class="flex_row center">
+                            <img src="../images/icons8-help.png" alt="dashboard">
+                            <p>Support Management</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="bottom_buttons flex_row space_between center width_full">
+                    <div class="image" onclick="showNotifications(event)">
+                        <img src="../images/bell.png" alt="">
+                        <span></span>
+                    </div>
+                    <div class="image">
+                        <img src="../images/shield.png" alt="">
+                    </div>
+                    <div class="image">
+                        <img src="../images/globe.png" alt="">
+                    </div>
+                    <div class="image" onclick="window.location.href = '../Login/loginAdmin.html'">
+                        <img src="../images/icons8-logout-64 1.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="right_section flex_column">
+                <div class="header flex_row space_between center" onclick="showEditScreen(event, 'header')">
+                    <p>Content Management System (CMS)</p>
+                    <button onclick="event.stopPropagation(); document.querySelector('.edit_category.flex_column').style.display = 'flex'; document.querySelector('.edit_category.flex_column h1').innerHTML = 'Add Category'">Add New Category</button>
+                </div>
+                <div class="content flex_column">
+                    <div class="header flex_row space_between center">
+                        <p>#</p>
+                        <p>Page List</p>
+                        <p>Action</p>
+                    </div>
+                    <div class="values flex_column">
+                        <div class="value flex_row center space_between">
+                            <p>1</p>
+                            <p>Splash Screen</p>
+                            <button onclick="showEditScreen(event, 'splash')"><img src="../images/edit_green.png" alt=""></button>
+                        </div>
+                        <div class="value flex_row center space_between">
+                            <p>2</p>
+                            <p>Introduction Screen 1</p>
+                            <button onclick="showEditScreen(event, 'intro1')"><img src="../images/edit_green.png" alt=""></button>
+                        </div>
+                        <div class="value flex_row center space_between">
+                            <p>3</p>
+                            <p>Introduction Screen 2</p>
+                            <button onclick="showEditScreen(event, 'intro2')"><img src="../images/edit_green.png" alt=""></button>
+                        </div>
+                        <div class="value flex_row center space_between">
+                            <p>4</p>
+                            <p>Introduction Screen 3</p>
+                            <button onclick="showEditScreen(event, 'intro3')"><img src="../images/edit_green.png" alt=""></button>
+                        </div>
+                        <div class="value flex_row center space_between">
+                            <p>5</p>
+                            <p>Category</p>
+                            <button onclick="showEditScreen(event, 'category')"><img src="../images/edit_green.png" alt=""></button>
+                        </div>
+                        <div class="value flex_row center space_between">
+                            <p>6</p>
+                            <p>Terms & Conditions</p>
+                            <button onclick="showEditScreen(event, 'terms')"><img src="../images/edit_green.png" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="splash_screen flex_column" style="display: none;">
+                    <div class="input flex_row align_flex_start">
+                        <p>Logo</p>
+                        <div class="image flex_row justify_center center">
+                            <img src="../images/Logo.png" alt="">
+                        </div>
+                        <div class="image_input">
+                            <input type="text" placeholder="Choose File">
+                            <div class="file_input flex_row justify_center center">
+                                <img src="../images/file_download_black.png" alt="">
+                                <input type="file">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input flex_row align_flex_start">
+                        <p>Tagline</p>
+                        <input type="text" placeholder="Lorem Ipsum">
+                    </div>
+                    <button>Save</button>
+                </div>
+                <div class="introduction_screen flex_column" style="display: none;">
+                    <div class="input flex_row align_flex_start">
+                        <p>Logo</p>
+                        <div class="image flex_row justify_center center">
+                            <img src="../images/Logo.png" alt="">
+                        </div>
+                        <div class="image_input">
+                            <input type="text" placeholder="Choose File">
+                            <div class="file_input flex_row justify_center center">
+                                <input type="file" name="" id="">
+                                <img src="../images/file_download_black.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input flex_row align_flex_start">
+                        <p>Image</p>
+                        <div class="image flex_row justify_center center">
+                            <!-- <img src="../images/Logo.png" alt=""> -->
+                        </div>
+                        <div class="image_input">
+                            <input type="text" placeholder="Choose File">
+                            <div class="file_input flex_row justify_center center">
+                                <input type="file" name="" id="">
+                                <img src="../images/file_download_black.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input flex_row align_flex_start">
+                        <p>Title</p>
+                        <input type="text" placeholder="Lorem Ipsum">
+                    </div>
+                    <button>Save</button>
+                </div>
+                <div class="terms_conditions flex_column" style="display: none;">
+                    <div class="input flex_row align_flex_start">
+                        <p>Title</p>
+                        <input type="text" placeholder="Lorem Ipsum">
+                    </div>
+                    <div class="input flex_row align_flex_start">
+                        <p>Description</p>
+                        <textarea type="text" placeholder="Lorem Ipsum"></textarea>
+                    </div>
+                    <button>Save</button>
+                </div>
+                <div class="category" style="display: none;">
+                    <div class="edit_category flex_column" style="display: none;">
+                        <h1>Edit Category</h1>
+                        <div class="input flex_column">
+                            <p>Category</p>
+                            <input type="text">
+                        </div>
+                        <div class="input flex_column">
+                            <p>Sort Order</p>
+                            <input type="text">
+                        </div>
+                        <div class="input flex_column">
+                            <p>Image</p>
+                            <div class="image_input">
+                                <input type="text">
+                                <div class="file_input flex_row justify_center center">
+                                    <input type="file">
+                                    <img src="../images/file_download_black.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons flex_row center">
+                            <button>Submit</button>
+                            <button onclick="event.currentTarget.parentElement.parentElement.style.display = 'none'">Reset</button>
+                        </div>
+                    </div>
+                    <div class="screen_1 width_full">
+                        <div class="header flex_row space_between center">
+                            <p>#</p>
+                            <p>Category</p>
+                            <p>Sort Order</p>
+                            <p>Image</p>
+                            <p>Action</p>
+                        </div>
+                        <div class="values flex_column">
+                            <div class="value flex_row center space_between">
+                                <p>1</p>
+                                <p onclick="showEditScreen(event, 'training')">Training</p>
+                                <p>0</p>
+                                <div class="image flex_row justify_center center">
+                                    <span></span>
+                                </div>
+                                <div class="action flex_row justify_center center">
+                                    <button onclick="document.querySelector('.edit_category.flex_column').style.display = 'flex'; document.querySelector('.edit_category.flex_column h1').innerHTML = 'Edit Category'"><img src="../images/edit_green.png" alt=""></button>
+                                </div>
+                            </div>
+                            <div class="value flex_row center space_between">
+                                <p>2</p>
+                                <p onclick="showEditScreen(event, 'clinic')">Klinic</p>
+                                <p>0</p>
+                                <div class="image flex_row justify_center center">
+                                    <span></span>
+                                </div>
+                                <div class="action flex_row justify_center center">
+                                    <button onclick="document.querySelector('.edit_category.flex_column').style.display = 'flex'; document.querySelector('.edit_category.flex_column h1').innerHTML = 'Edit Category'"><img src="../images/edit_green.png" alt=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen_2 width_full" style="display: none;">
+                        <div class="header flex_row space_between center">
+                            <p>#</p>
+                            <p>Category</p>
+                            <p>Sort Order</p>
+                            <p>Image</p>
+                            <p>Action</p>
+                        </div>
+                        <div class="values flex_column">
+                            <div class="value flex_row center space_between">
+                                <p>1</p>
+                                <p onclick="showEditScreen(event, 'training')">Soccer</p>
+                                <p>0</p>
+                                <div class="image flex_row justify_center center">
+                                    <span></span>
+                                </div>
+                                <div class="action flex_row justify_center center">
+                                    <button onclick="document.querySelector('.edit_category.flex_column').style.display = 'flex'; document.querySelector('.edit_category.flex_column h1').innerHTML = 'Edit Category'"><img src="../images/edit_green.png" alt=""></button>
+                                </div>
+                            </div>
+                            <div class="value flex_row center space_between">
+                                <p>2</p>
+                                <p onclick="showEditScreen(event, 'training')">Tennis</p>
+                                <p>0</p>
+                                <div class="image flex_row justify_center center">
+                                    <span></span>
+                                </div>
+                                <div class="action flex_row justify_center center">
+                                    <button onclick="document.querySelector('.edit_category.flex_column').style.display = 'flex'; document.querySelector('.edit_category.flex_column h1').innerHTML = 'Edit Category'"><img src="../images/edit_green.png" alt=""></button>
+                                </div>
+                            </div>
+                            <div class="value flex_row center space_between">
+                                <p>3</p>
+                                <p onclick="showEditScreen(event, 'training')">Golf</p>
+                                <p>0</p>
+                                <div class="image flex_row justify_center center">
+                                    <span></span>
+                                </div>
+                                <div class="action flex_row justify_center center">
+                                    <button onclick="document.querySelector('.edit_category.flex_column').style.display = 'flex'; document.querySelector('.edit_category.flex_column h1').innerHTML = 'Edit Category'"><img src="../images/edit_green.png" alt=""></button>
+                                </div>
+                            </div>
+                            <div class="value flex_row center space_between">
+                                <p>4</p>
+                                <p onclick="showEditScreen(event, 'training')">Basketball</p>
+                                <p>0</p>
+                                <div class="image flex_row justify_center center">
+                                    <span></span>
+                                </div>
+                                <div class="action flex_row justify_center center">
+                                    <button onclick="document.querySelector('.edit_category.flex_column').style.display = 'flex'; document.querySelector('.edit_category.flex_column h1').innerHTML = 'Edit Category'"><img src="../images/edit_green.png" alt=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen_3 width_full" style="display: none;">
+                        <div class="header flex_row space_between center">
+                            <p>#</p>
+                            <p>Category</p>
+                            <p>Sort Order</p>
+                            <p>Image</p>
+                            <p>Action</p>
+                        </div>
+                        <div class="values flex_column">
+                            <div class="value flex_row center space_between">
+                                <p>1</p>
+                                <p onclick="showEditScreen(event, 'training')">Sports Medicine Physicians</p>
+                                <p>0</p>
+                                <div class="image flex_row justify_center center">
+                                    <span></span>
+                                </div>
+                                <div class="action flex_row justify_center center">
+                                    <button onclick="document.querySelector('.edit_category.flex_column').style.display = 'flex'; document.querySelector('.edit_category.flex_column h1').innerHTML = 'Edit Category'"><img src="../images/edit_green.png" alt=""></button>
+                                </div>
+                            </div>
+                            <div class="value flex_row center space_between">
+                                <p>2</p>
+                                <p onclick="showEditScreen(event, 'training')">Orthopedist</p>
+                                <p>0</p>
+                                <div class="image flex_row justify_center center">
+                                    <span></span>
+                                </div>
+                                <div class="action flex_row justify_center center">
+                                    <button onclick="document.querySelector('.edit_category.flex_column').style.display = 'flex'; document.querySelector('.edit_category.flex_column h1').innerHTML = 'Edit Category'"><img src="../images/edit_green.png" alt=""></button>
+                                </div>
+                            </div>
+                            <div class="value flex_row center space_between">
+                                <p>3</p>
+                                <p onclick="showEditScreen(event, 'training')">Dermatologist</p>
+                                <p>0</p>
+                                <div class="image flex_row justify_center center">
+                                    <span></span>
+                                </div>
+                                <div class="action flex_row justify_center center">
+                                    <button onclick="document.querySelector('.edit_category.flex_column').style.display = 'flex'; document.querySelector('.edit_category.flex_column h1').innerHTML = 'Edit Category'"><img src="../images/edit_green.png" alt=""></button>
+                                </div>
+                            </div>
+                            <div class="value flex_row center space_between">
+                                <p>4</p>
+                                <p onclick="showEditScreen(event, 'training')">Sports Psychologist</p>
+                                <p>0</p>
+                                <div class="image flex_row justify_center center">
+                                    <span></span>
+                                </div>
+                                <div class="action flex_row justify_center center">
+                                    <button onclick="document.querySelector('.edit_category.flex_column').style.display = 'flex'; document.querySelector('.edit_category.flex_column h1').innerHTML = 'Edit Category'"><img src="../images/edit_green.png" alt=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="footer flex_row space_between center" id="footer">
+                    <p>Showing <span id="current">05</span> Of <span id="total">05</span> Entries</p>
+                    <div class="pagination flex_row center" onclick="changePage(event)">
+                        <button id="prev">Prev</button>
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button id="next">Next</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <script>window.addEventListener('resize', () => { console.log(window.innerWidth); })</script>
+</body>
+</html>

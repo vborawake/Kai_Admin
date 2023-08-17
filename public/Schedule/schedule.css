@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex_column_reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.space_between {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.space_evenly {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.justify_center {
+    justify-content: center;
+}
+
+.justify_flex_start {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.justify_flex_end {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.center {
+    align-items: center;
+}
+
+.align_flex_start {
+    align-items: flex-start;
+    /* flex-wrap: wrap; */
+}
+
+.flex_row {
+    display: flex;
+}
+
+.flex_row_reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: #FFF;
+}
+
+button {
+    border: none;
+    padding: 0.6rem 1rem;
+    background: #B83169;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.width_full {
+    width: 100%;
+}
+
+.height_full {
+    height: 100%;
+}
+
+.mt4 {
+    margin: 4rem 0 0 0;
+}
+
+.container {
+    min-height: 100vh;
+    font-family: 'Nunito', 'sans-serif';
+    /* display: none; */
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+    background: #ececec;
+}
+
+.loader img {
+    width: 30%;
+    height: 30%;
+    object-fit: contain;
+}
+
+.hamburger {
+    display: none;
+}
+
+.mobile_menu {
+    display: none;
+}
+
+.container > .content_wrapper > .right_section {
+    position: absolute;
+    padding: 2rem;
+    width: 80%;
+    top: 5rem;
+    left: 20%;
+}
+
+.container .header h1 {
+    color: #19214F;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.container .header p {
+    font-size: 0.9rem;
+    color: #778087;
+    margin: 0.5rem 0 0 0;
+}
+
+.container .content_wrapper .right_section .header .header_right_section {
+    width: 30%;
+}
+
+.container .content_wrapper .right_section .header .header_right_section .date_picker {
+    width: 100%;
+    margin: 0 1rem 0 0;
+    height: 3rem;
+}
+
+.container .content_wrapper .right_section .header .header_right_section button {
+    width: 70%;
+    height: 3rem;
+    background: linear-gradient(337deg, #19214F 0%, #14BC66 100%);
+    box-shadow: 0px 5px 6px 0px rgba(13, 27, 103, 0.50);
+}
+
+.container .popup .header p {
+    font-size: 1.3rem;
+    color: #FFF;
+    font-weight: 700;
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.container .popup .header button {
+    background: none;
+    padding-right: 1.5rem;
+}
+
+.container .content_wrapper .popup .form .form_right_section {
+    width: 100%;
+}
+
+.container .popup .buttons {
+    margin-left: 11.5%;
+}
+
+.container .popup .buttons button {
+    width: 9.5rem;
+    height: 3rem;
+    border-radius: 0.6rem;
+}
+
+.container .popup .buttons button:nth-child(1) {
+    background: linear-gradient(337deg, #19214F 0%, #14BC66 100%);
+    box-shadow: 0px 5px 6px 0px rgba(13, 27, 103, 0.50);
+    margin: 0 1rem 0 0;
+}
+
+.container .popup .buttons button:nth-child(2) {
+    background: #FFF;
+    border: 2px solid #F54A4A;
+    color: #F54A4A;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container .content_wrapper .right_section .header .header_right_section {
+        width: 40%;
+    }
+
+    .container .content_wrapper .right_section .header .header_right_section .date_picker {
+        width: 50%;
+    }
+
+    .container .content_wrapper .right_section .header .header_right_section .date_picker svg {
+        margin: 0 0 0 1rem;
+    }
+    
+    .container .content_wrapper .right_section .header .header_right_section button {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container .content_wrapper .sidebar {
+        width: 25% !important;
+    }
+
+    .container .content_wrapper > .right_section {
+        left: 25%;
+        width: 75%;
+    }
+
+    .container .content_wrapper .right_section .header .header_left_section {
+        width: 50%;
+    }
+
+    .container .content_wrapper .right_section .header .header_right_section {
+        width: 50%;
+    }
+
+    .container .content_wrapper .right_section .header .header_right_section .date_picker {
+        width: 50%;
+    }
+
+    .container .content_wrapper .right_section .header .header_right_section .date_picker svg {
+        margin: 0 0 0 1rem;
+    }
+    
+    .container .content_wrapper .right_section .header .header_right_section button {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container .content_wrapper .sidebar {
+        width: 30% !important;
+    }
+
+    .container .content_wrapper > .right_section {
+        left: 30%;
+        width: 70%;
+    }
+
+    .container .content_wrapper .right_section .header {
+        flex-direction: column;
+        height: fit-content !important;
+    }
+
+    .container .content_wrapper .right_section .header .left_section {
+        width: 100%;
+    }
+
+    .container .content_wrapper .right_section .header .header_right_section {
+        width: 100%;
+    }
+
+    .container .content_wrapper .right_section .header .header_right_section .date_picker {
+        width: 50%;
+    }
+
+    .container .content_wrapper .right_section .header .header_right_section .date_picker svg {
+        margin: 0 0 0 1rem;
+    }
+    
+    .container .content_wrapper .right_section .header .header_right_section button {
+        width: 50%;
+    }
+}

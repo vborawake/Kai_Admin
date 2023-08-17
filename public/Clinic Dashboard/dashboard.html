@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js" integrity="sha512-CMF3tQtjOoOJoOKlsS7/2loJlkyctwzSoDK/S40iAB+MqWSaf50uObGQSk5Ny/gfRhRCjNLvoxuCvdnERU4WGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="dashboard.js"></script>
+    <script defer src="../pagination.js"></script>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../helper.css">
+    <title>Clinic Dashboard</title>
+</head>
+<body>
+    <div class="container flex_column">
+        <nav class="flex_row space_between center">
+            <img src="../images/Logo.png" alt="logo" onclick="window.location.href = '../Clinic Dashboard/dashboard.html'">
+            <div class="right_section flex_row space_between center" onclick="showPopup(event)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.6667 14.6667H15.6133L15.24 14.3067C16.5467 12.7867 17.3333 10.8133 17.3333 8.66667C17.3333 3.88 13.4533 0 8.66667 0C3.88 0 0 3.88 0 8.66667C0 13.4533 3.88 17.3333 8.66667 17.3333C10.8133 17.3333 12.7867 16.5467 14.3067 15.24L14.6667 15.6133V16.6667L21.3333 23.32L23.32 21.3333L16.6667 14.6667ZM8.66667 14.6667C5.34667 14.6667 2.66667 11.9867 2.66667 8.66667C2.66667 5.34667 5.34667 2.66667 8.66667 2.66667C11.9867 2.66667 14.6667 5.34667 14.6667 8.66667C14.6667 11.9867 11.9867 14.6667 8.66667 14.6667Z" fill="#778087"/>
+                </svg>
+                <div class="profile_img"></div>
+                <p class="username">John</p>
+            </div>
+            <div class="menu flex_column">
+                <div class="item flex_row center" onclick="window.location.href = '../Profile/profile.html'">
+                    <img src="../images/account_circle_green.png" alt="">
+                    <p>Profile</p>
+                </div>
+                <div class="item flex_row center" onclick="window.location.href = '../Profile/profile.html'; localStorage.setItem('password', 'true')">
+                    <img src="../images/password_green.png" alt="">
+                    <p>Change Password</p>
+                </div>
+                <div class="item flex_row center" onclick="window.location.href = '../Notification/notification.html'">
+                    <img src="../images/notifications_green.png" alt="">
+                    <p>Notification Settings</p>
+                </div>
+                <div class="item flex_row center" onclick="window.location.href = '../Login/login.html'">
+                    <img src="../images/logout_green.png" alt="">
+                    <p>Logout</p>
+                </div>
+            </div>
+        </nav>
+        <div class="content_wrapper flex_row width_full">
+            <div class="notifications_wrapper flex_column">
+                <div class="notification_header flex_row space_between center">
+                    <p>Notifications</p>
+                    <p onclick="window.location.href = '../All Notifications/notification.html';">View All</p>
+                </div>
+                <div class="wrapper flex_column">
+                    <p class="when">Today</p>
+                    <div class="notifications flex_column">
+                        <div class="notification flex_row space_between center">
+                            <div class="left_section flex_row center">
+                                <div class="image"></div>
+                                <div class="text flex_column space_between">
+                                    <div class="name">Lorem, ipsum.</div>
+                                    <div class="time">04:25 PM</div>
+                                </div>
+                            </div>
+                            <div class="right_section flex_row justify_center center">
+                                <img src="../images/delete_outline_black_24dp 1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="notification flex_row space_between center">
+                            <div class="left_section flex_row center">
+                                <div class="image"></div>
+                                <div class="text flex_column space_between">
+                                    <div class="name">Lorem, ipsum.</div>
+                                    <div class="time">04:25 PM</div>
+                                </div>
+                            </div>
+                            <div class="right_section flex_row justify_center center">
+                                <img src="../images/delete_outline_black_24dp 1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper flex_column">
+                    <p class="when">Yesterday</p>
+                    <div class="notifications flex_column">
+                        <div class="notification flex_row space_between center">
+                            <div class="left_section flex_row center">
+                                <div class="image"></div>
+                                <div class="text flex_column space_between">
+                                    <div class="name">Lorem, ipsum.</div>
+                                    <div class="time">04:25 PM</div>
+                                </div>
+                            </div>
+                            <div class="right_section flex_row justify_center center">
+                                <img src="../images/delete_outline_black_24dp 1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup flex_column">
+                <div class="header flex_row space_between center">
+                    <p>Patient Details</p>
+                    <button onclick="event.target.parentElement.parentElement.style.transform = 'scale(0)'; event.target.parentElement.parentElement.style.display = 'none';">Close</button>
+                </div>
+                <div class="form flex_row">
+                    <div class="form_left_section flex_column center">
+                        <div class="image">
+                            <input type="file">
+                        </div>
+                        <button>Delete</button>
+                    </div>
+                    <div class="form_right_section flex_column">
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Name</p>
+                                <input type="text" placeholder="Alex">
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Gender</p>
+                                <input type="text" placeholder="Male">
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Email</p>
+                                <input type="text" placeholder="alex@gmail.com">
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Contact</p>
+                                <input type="text" placeholder="256489652">
+                            </div>
+                        </div>
+                        <div class="full_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Location</p>
+                                <input type="text" placeholder="Bldg No B 4, Sector No 6,Covington">
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Last Visit</p>
+                                <input type="date" placeholder="10-06-2023">
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Time</p>
+                                <input type="time" value="01:30">
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Height</p>
+                                <input type="text" placeholder="175cm">
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Weight</p>
+                                <input type="text" placeholder="70 KG">
+                            </div>
+                        </div>
+                        <div class="full_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Symptoms</p>
+                                <textarea placeholder="Acute Pain" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="half_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Fees</p>
+                                <input type="text" placeholder="$ 45">
+                            </div>
+                            <div class="input flex_row center">
+                                <p>Status</p>
+                                <input type="text" placeholder="Closed">
+                            </div>
+                        </div>
+                        <div class="full_input flex_row center space_between">
+                            <div class="input flex_row center">
+                                <p>Reports/Prescription</p>
+                                <input type="text" placeholder="No File Chosen">
+                                <div class="file">
+                                    <img src="../images/file_download_black.png" alt="">
+                                    <input type="file" name="" id="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar flex_column space_between">
+                <ul>
+                    <li class="active flex_column justify_center">
+                        <a href="../Clinic Dashboard/dashboard.html" class="flex_row center">
+                            <img src="../images/icons8-dashboard-layout-48 1.png" alt="dashboard">
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Appointments/appointments.html" class="flex_row center">
+                            <img src="../images/icons8-management-48 (1) 1.png" alt="dashboard">
+                            <p>My Appointment</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Schedule/schedule.html" class="flex_row center">
+                            <img src="../images/icons8-schedule-26 1.png" alt="dashboard">
+                            <p>Schedule</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Chat/chat.html" class="flex_row center">
+                            <img src="../images/icons8-chat-48 (1) 2.png" alt="dashboard">
+                            <p>Chat</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Services/services.html" class="flex_row center">
+                            <img src="../images/icons8-category-58 (1) 1.png" alt="dashboard">
+                            <p>Services</p>
+                        </a>
+                    </li>
+                    <li class="flex_column justify_center">
+                        <a href="../Payment/payment.html" class="flex_row center">
+                            <img src="../images/icons8-card-payment-50 1.png" alt="dashboard">
+                            <p>Payment</p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="bottom_buttons flex_row space_between center width_full">
+                    <div class="image" onclick="showNotifications(event)">
+                        <img src="../images/bell.png" alt="">
+                        <span></span>
+                    </div>
+                    <div class="image">
+                        <img src="../images/shield.png" alt="">
+                    </div>
+                    <div class="image">
+                        <img src="../images/globe.png" alt="">
+                    </div>
+                    <div class="image" onclick="window.location.href = '../Login/login.html'">
+                        <img src="../images/icons8-logout-64 1.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="right_section flex_column">
+                <div class="stats flex_row space_between">
+                    <div class="stat flex_column space_evenly">
+                        <p>Today's Patient</p>
+                        <p>3472</p>
+                    </div>
+                    <div class="stat flex_column space_evenly">
+                        <p>Appointments</p>
+                        <p>3472</p>
+                    </div>
+                    <div class="stat flex_column space_evenly">
+                        <p>Total Revenue</p>
+                        <p>3472</p>
+                    </div>
+                    <div class="stat flex_column space_evenly">
+                        <div class="wrapper flex_column space_between">
+                            <p>Next Appointment</p>
+                            <p>06/06/23</p>
+                            <p>04:20 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart_section flex_row space_between">
+                    <div class="area_chart box flex_column space_between">
+                        <div class="header flex_row space_between center width_full">
+                            <h1>No. Of Patients</h1>
+                            <div class="date_picker flex_row space_between center">
+                                <p>May 2023</p>
+                                <svg width="24" height="24" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.0417 2H12.25V0H10.6667V2H4.33333V0H2.75V2H1.95833C1.07958 2 0.382917 2.9 0.382917 4L0.375 18C0.375 19.1 1.07958 20 1.95833 20H13.0417C13.9125 20 14.625 19.1 14.625 18V4C14.625 2.9 13.9125 2 13.0417 2ZM13.0417 18H1.95833V8H13.0417V18ZM5.125 12H3.54167V10H5.125V12ZM8.29167 12H6.70833V10H8.29167V12ZM11.4583 12H9.875V10H11.4583V12ZM5.125 16H3.54167V14H5.125V16ZM8.29167 16H6.70833V14H8.29167V16ZM11.4583 16H9.875V14H11.4583V16Z" fill="#9699A0"/>
+                                </svg>
+                                <input type="date">
+                            </div>
+                        </div>
+                        <canvas id="area"></canvas>
+                    </div>
+                    <div class="doughnut_chart box flex_column align_flex_start">
+                        <div class="header flex_row space_between center width_full">
+                            <h1>Appointment Review</h1>
+                        </div>
+                        <canvas id="doughnut"></canvas>
+                        <!-- <p id="summary">Total 212</p> -->
+                    </div>
+                </div>
+                <div class="appointments_patients flex_row space_between">
+                    <div class="appointments flex_column box">
+                        <h1>Today's Appointments</h1>
+                        <div class="header flex_row space_between center">
+                            <p>#</p>
+                            <p>Patient Name</p>
+                            <p>Gender</p>
+                            <p>Last Visit Date</p>
+                            <p>Symptoms</p>
+                            <p>Actions</p>
+                        </div>
+                        <div class="values flex_row space_between center">
+                            <p><span></span></p>
+                            <p>Joe Biden</p>
+                            <p>Male</p>
+                            <p>21/05/2023</p>
+                            <p>Acute Pain</p>
+                            <div class="actions flex_row center space_between">
+                                <button onclick="showDetails(event)"><img src="../images/visibility_black_24dp 5.png" alt=""></button>
+                                <button><img src="../images/delete_outline_black_24dp 1.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="values flex_row space_between center">
+                            <p><span></span></p>
+                            <p>Joe Biden</p>
+                            <p>Male</p>
+                            <p>21/05/2023</p>
+                            <p>Acute Pain</p>
+                            <div class="actions flex_row center space_between">
+                                <button onclick="showDetails(event)"><img src="../images/visibility_black_24dp 5.png" alt=""></button>
+                                <button><img src="../images/delete_outline_black_24dp 1.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="values flex_row space_between center">
+                            <p><span></span></p>
+                            <p>Joe Biden</p>
+                            <p>Male</p>
+                            <p>21/05/2023</p>
+                            <p>Acute Pain</p>
+                            <div class="actions flex_row center space_between">
+                                <button onclick="showDetails(event)"><img src="../images/visibility_black_24dp 5.png" alt=""></button>
+                                <button><img src="../images/delete_outline_black_24dp 1.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="values flex_row space_between center">
+                            <p><span></span></p>
+                            <p>Joe Biden</p>
+                            <p>Male</p>
+                            <p>21/05/2023</p>
+                            <p>Acute Pain</p>
+                            <div class="actions flex_row center space_between">
+                                <button onclick="showDetails(event)"><img src="../images/visibility_black_24dp 5.png" alt=""></button>
+                                <button><img src="../images/delete_outline_black_24dp 1.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="values flex_row space_between center" style="display: none;">
+                            <p><span></span></p>
+                            <p>Joe Biden</p>
+                            <p>Male</p>
+                            <p>21/05/2023</p>
+                            <p>Acute Pain</p>
+                            <div class="actions flex_row center space_between">
+                                <button onclick="showDetails(event)"><img src="../images/visibility_black_24dp 5.png" alt=""></button>
+                                <button><img src="../images/delete_outline_black_24dp 1.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="values flex_row space_between center" style="display: none;">
+                            <p><span></span></p>
+                            <p>Joe Biden</p>
+                            <p>Male</p>
+                            <p>21/05/2023</p>
+                            <p>Acute Pain</p>
+                            <div class="actions flex_row center space_between">
+                                <button onclick="showDetails(event)"><img src="../images/visibility_black_24dp 5.png" alt=""></button>
+                                <button><img src="../images/delete_outline_black_24dp 1.png" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="pagination flex_row center">
+                            <button id="prev" onclick="showPage(event, '.appointments.flex_column.box')">Prev</button>
+                            <button onclick="showPage(event, '.appointments.flex_column.box')" class="active">1</button>
+                            <button onclick="showPage(event, '.appointments.flex_column.box')">2</button>
+                            <button id="next" onclick="showPage(event, '.appointments.flex_column.box')">Next</button>
+                        </div>
+                    </div>
+                    <div class="patients flex_column box">
+                        <h1>Patient Group</h1>
+                        <div class="group flex_row space_between center">
+                            <div class="image">
+                                <img src="../images/download.png" alt="">
+                            </div>
+                            <p id="group_name">Hypertrophic Cardiomyopathy</p>
+                            <p id="number_patients">12 Patients</p>
+                        </div>
+                        <div class="group flex_row space_between center">
+                            <div class="image">
+                                <img src="../images/download (3) 3.png" alt="">
+                            </div>
+                            <p id="group_name">Arrhythmias</p>
+                            <p id="number_patients">12 Patients</p>
+                        </div>
+                        <div class="group flex_row space_between center">
+                            <div class="image">
+                                <img src="../images/download (4) 2.png" alt="">
+                            </div>
+                            <p id="group_name">Aortic Dissection</p>
+                            <p id="number_patients">12 Patients</p>
+                        </div>
+                        <div class="group flex_row space_between center">
+                            <div class="image">
+                                <img src="../images/images (1) 1.png" alt="">
+                            </div>
+                            <p id="group_name">Myocarditis</p>
+                            <p id="number_patients">12 Patients</p>
+                        </div>
+                        <div class="group flex_row space_between center">
+                            <div class="image">
+                                <img src="../images/download (5) 2.png" alt="">
+                            </div>
+                            <p id="group_name">Long QT Syndrome</p>
+                            <p id="number_patients">12 Patients</p>
+                        </div>
+                        <div class="group flex_row space_between center">
+                            <div class="image">
+                                <img src="../images/Obstuctive-Cardio-Myopathy-heart-image 1.png" alt="">
+                            </div>
+                            <p id="group_name">Heart Strain</p>
+                            <p id="number_patients">12 Patients</p>
+                        </div>
+                        <div class="group flex_row space_between center">
+                            <div class="image">
+                                <img src="../images/download (5) 2.png" alt="">
+                            </div>
+                            <p id="group_name">Others</p>
+                            <p id="number_patients">12 Patients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
