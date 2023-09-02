@@ -92,3 +92,8 @@ function closeDetails(e) {
         popup.style.display = 'none';
     }, 500);
 }
+
+function setSport(e) {
+    Array.from(e.currentTarget.children).forEach(button => button.classList.remove('active'));
+    e.target.classList.add('active');
+}
