@@ -57,8 +57,10 @@ function showAdditionalInfo(e, action) {
         additionalInfo.style.display = 'flex';
     } else {
         videoSection.style.display = 'flex';
-        additionalInfo.style.display = 'none';
         document.querySelector('.training_material.flex_row.width_full').style.display = 'none';
+        additionalInfo.style.display = 'none';
+        if (!e.currentTarget.classList.contains('nonEdit')) videoSection.querySelector('#title').value = e.currentTarget.previousElementSibling.querySelector('p').innerText;
+        else videoSection.querySelector('#title').value = '';
     }
 }
 
