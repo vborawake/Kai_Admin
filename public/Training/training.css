@@ -353,6 +353,12 @@ input:focus, textarea:focus {
     margin-bottom: 0.5rem;
 }
 
+.container .add_training_material .training_material .tab img {
+    width: 1.3rem;
+    height: 1.3rem;
+    cursor: pointer;
+}
+
 .container .add_training_material .training_material .tab button {
     background: none;
     padding: 0;
@@ -392,6 +398,12 @@ input:focus, textarea:focus {
 .container .content_wrapper .add_training_material .training_right_section .header p {
     font-size: 1.5rem;
     color: #707070;
+}
+
+.container .content_wrapper .add_training_material .training_right_section .header img {
+    cursor: pointer;
+    width: 1.3rem;
+    height: 1.3rem;
 }
 
 .container .content_wrapper .add_training_material .training_left_section .buttons {
@@ -489,6 +501,63 @@ input:focus, textarea:focus {
 .container .content_wrapper .popup .form #status,
 .container .content_wrapper .popup .form #status::placeholder {
     color: #00A962;
+}
+
+.container .popup {
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 1.5rem;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 0.6rem;
+    width: 35% !important;
+    height: fit-content;
+    transform: scale(1) !important;
+}
+
+.container .popup h1 {
+    font-size: 1.3rem;
+    color: #19214F;
+    margin: 0 0 1rem 0;
+}
+
+.container .popup .buttons button {
+    height: 2.5rem;
+    width: 25%;
+    margin: 0 1rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.container .popup .buttons button:nth-child(1) {
+    background: linear-gradient(337deg, #19214F 0%, #14BC66 100%);
+    box-shadow: 0px 5px 6px 0px rgba(13, 27, 103, 0.50);
+}
+
+.container .popup .buttons button:nth-child(2) {
+    color: #19214F;
+    background: none;
+}
+
+.container .popup .input {
+    margin: 0 0 1rem 0;
+}
+
+.container .popup .input p {
+    margin: 0 0 0.5rem 0;
+}
+
+.container .popup .input input {
+    height: 3.5rem;
+    background: #FFF;
+    border-radius: 0.6rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0 0 0 1rem;
+    font-size: 1.1rem;
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {

@@ -9,6 +9,7 @@ const header = document.querySelector('.right_section .header.flex_row.space_bet
 const videoSection = document.querySelector('.video_section.flex_row.width_full');
 const additionalInfo = document.querySelector('.additional_info.flex_row.width_full');
 const popup = document.querySelector('.popup.flex_column');
+const modulePopup = document.querySelector('.popup.module');
 
 function selectTab(e) {
     Array.from(e.currentTarget.children).forEach(tab => {
@@ -82,6 +83,82 @@ function showDetails(e) {
     requestAnimationFrame(() => {
         popup.style.transform = 'scale(1)';
     });
+}
+
+function showTrainingPopups(e, element) {
+    modulePopup.style.setProperty('display', 'block', 'important');
+    gsap.fromTo(modulePopup, {
+        y: '-2rem',
+        opacity: 0
+    }, {
+        y: '0',
+        opacity: 1,
+        duration: 0.5,
+    });
+    if (element === 'module') modulePopup.querySelector('h1').innerHTML = 'Add Module';
+    else if (element === 'category') {
+        modulePopup.querySelector('h1').innerHTML = 'Add Category';
+        modulePopup.querySelector('input').placeholder = 'Introduction etc.';
+    }
+    else if (element === 'subcategory') {
+        modulePopup.querySelector('h1').innerHTML = 'Add Subcategory';
+        modulePopup.querySelector('input').placeholder = 'About etc';
+    }
+}
+
+function createEntry(e) {
+    const popupName = document.querySelector('.popup.module h1').innerHTML;
+    const name = document.querySelector('.popup.module input').value;
+
+    const html = `
+    <div class="tab flex_row space_between tempClass">
+        <div class="tab_left_side flex_row center">
+            <img src="../images/remove_black.png" alt="">
+            <p>${ name }</p>
+        </div>
+        <img src="../images/plus_gray.png" onclick="showTrainingPopups(event, 'category')" alt="Add module">
+    </div>
+    `;
+    const categoryHtml = `
+    <div class="tab flex_row space_between tempClass">
+        <div class="tab_left_side flex_row center">
+            <img src="../images/remove_black.png" alt="">
+            <p>${ name }</p>
+        </div>
+        <img src="../images/plus_gray.png" onclick="showTrainingPopups(event, 'subcategory')" alt="Add module">
+    </div>
+    `;
+    const subcategoryHtml = `
+    <div class="tab flex_row space_between tempClass">
+        <div class="tab_left_side flex_row center">
+            <img src="../images/source_black.png" alt="">
+            <p>${ name }</p>
+        </div>
+        <button onclick="showAdditionalInfo(event, 'video')"><img src="../images/edit_black.png" alt=""></button>
+    </div>
+    `;
+
+    if (name) {
+        gsap.to(modulePopup, {
+            opacity: 0,
+            onComplete() {
+                modulePopup.style.setProperty('display', 'none', 'important');
+            }
+        });
+        if (popupName === 'Add Module') {
+            document.querySelector('.tabs').insertAdjacentHTML('beforeend', html);
+            document.querySelector('.tempClass').classList.remove('tempClass');
+        } else if (popupName === 'Add Category') {
+            document.querySelector('.tabs').insertAdjacentHTML('beforeend', categoryHtml);
+            document.querySelector('.tempClass').style.marginLeft = '2rem';
+            document.querySelector('.tempClass').classList.remove('tempClass');
+        } else if (popupName === 'Add Subcategory') {
+            document.querySelector('.tabs').insertAdjacentHTML('beforeend', subcategoryHtml);
+            document.querySelector('.tempClass').style.marginLeft = '4rem';
+            document.querySelector('.tempClass').classList.remove('tempClass');
+        }
+    }
+    
 }
 
 function closeDetails(e) {

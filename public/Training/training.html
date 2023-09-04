@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../helper.css">
     <link rel="stylesheet" href="training.css">
     <title>Training</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <div class="container flex_column">
@@ -371,8 +372,9 @@
                             </div>
                         </div>
                         <div class="training_right_section flex_column">
-                            <div class="header">
+                            <div class="header flex_row space_between center">
                                 <p>Modules</p>
+                                <img src="../images/plus_gray.png" alt="Add module" onclick="showTrainingPopups(event, 'module')">
                             </div>
                             <div class="tabs flex_column">
                                 <div class="tab flex_row space_between">
@@ -380,12 +382,14 @@
                                         <img src="../images/remove_black.png" alt="">
                                         <p>Season (1)</p>
                                     </div>
+                                    <img src="../images/plus_gray.png" alt="Add module" onclick="showTrainingPopups(event, 'category')">
                                 </div>
                                 <div class="tab flex_row space_between">
                                     <div class="tab_left_side flex_row center">
                                         <img src="../images/remove_black.png" alt="">
                                         <p>Introduction</p>
                                     </div>
+                                    <img src="../images/plus_gray.png" alt="Add module" onclick="showTrainingPopups(event, 'subcategory')">
                                 </div>
                                 <div class="tab flex_row space_between">
                                     <div class="tab_left_side flex_row center">
@@ -486,6 +490,17 @@
                         <button class="active" onclick="showPage(event, '.appointments.flex_column.box')">1</button>
                         <button onclick="showPage(event, '.appointments.flex_column.box')">2</button>
                         <button id="next">Next</button>
+                    </div>
+                </div>
+                <div class="popup module">
+                    <h1>Add Module</h1>
+                    <div class="input flex_column">
+                        <p>Module Name</p>
+                        <input type="text" placeholder="Season(1), Season(2) etc....">
+                    </div>
+                    <div class="buttons flex_row center">
+                        <button onclick="createEntry(event)">Create</button>
+                        <button onclick="event.currentTarget.parentElement.parentElement.style.display = 'none'">Reset</button>
                     </div>
                 </div>
             </div>
