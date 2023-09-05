@@ -396,21 +396,21 @@
                                         <img src="../images/source_black.png" alt="">
                                         <p>About</p>
                                     </div>
-                                    <button onclick="showAdditionalInfo(event, 'video')"><img src="../images/edit_black.png" alt=""></button>
+                                    <button onclick="showAdditionalInfo(event, 'edit')"><img src="../images/edit_black.png" alt=""></button>
                                 </div>
                                 <div class="tab flex_row space_between">
                                     <div class="tab_left_side flex_row center">
                                         <img src="../images/source_black.png" alt="">
                                         <p>Fundamentals</p>
                                     </div>
-                                    <button onclick="showAdditionalInfo(event, 'video')"><img src="../images/edit_black.png" alt=""></button>
+                                    <button onclick="showAdditionalInfo(event, 'edit')"><img src="../images/edit_black.png" alt=""></button>
                                 </div>
                                 <div class="tab flex_row space_between">
                                     <div class="tab_left_side flex_row center">
                                         <img src="../images/source_black.png" alt="">
                                         <p>Techniques</p>
                                     </div>
-                                    <button  onclick="showAdditionalInfo(event, 'video')"><img src="../images/edit_black.png" alt=""></button>
+                                    <button  onclick="showAdditionalInfo(event, 'edit')"><img src="../images/edit_black.png" alt=""></button>
                                 </div>
                             </div>
                         </div>
@@ -426,7 +426,7 @@
                             <div class="input flex_row">
                                 <p>Video Source</p>
                                 <div class="type flex_row center" style="margin: 0 2rem 0 0;">
-                                    <input type="radio" name="upload" id="file">
+                                    <input type="radio" checked="checked" name="upload" id="file">
                                     <p>Upload File</p>
                                 </div>
                                 <div class="type flex_row center">
@@ -447,12 +447,8 @@
                                 <input id="title" type="text" placeholder="Season (1)">
                             </div>
                             <div class="input flex_row">
-                                <p>SubCategory</p>
+                                <p>Sub Category</p>
                                 <input id="title" type="text" placeholder="Introduction">
-                            </div>
-                            <div class="input flex_row">
-                                <p>Title</p>
-                                <input id="title" type="text" placeholder="Add Title">
                             </div>
                             <div class="input flex_row">
                                 <p>Description</p>
@@ -491,6 +487,34 @@
                             <div class="buttons flex_row justify_flex_end">
                                 <button onclick="showAdditionalInfo(event, 'back')">Cancel</button>
                                 <button>Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_section edit flex_row width_full" style="display: none;">
+                        <div class="training_left_section flex_column">
+                            <div class="buttons flex_column">
+                                <button class="active">Video</button>
+                            </div>
+                        </div>
+                        <div class="training_right_section flex_column">
+                            <div class="input flex_row">
+                                <p>Video Source</p>
+                                <div class="type flex_row center" style="margin: 0 2rem 0 0;">
+                                    <input type="radio" name="upload" checked id="file">
+                                    <p>Upload File</p>
+                                </div>
+                                <div class="type flex_row center">
+                                    <input type="radio" name="upload" id="url">
+                                    <p>Embed Video Url</p>
+                                </div>
+                            </div>
+                            <div class="input flex_row" id="upload_type">
+                                <p>Select File</p>
+                                <button>Upload File</button>
+                            </div>
+                            <div class="input flex_row">
+                                <p>Title</p>
+                                <input id="title" type="text" placeholder="Add Title">
                             </div>
                         </div>
                     </div>

@@ -1,12 +1,13 @@
 const tabs = document.querySelector('.left_side.flex_row.space_between.center');
 const appointments = document.getElementById('appointments');
 const uploadType = document.getElementById('upload_type');
-const file = document.getElementById('file');
-const url = document.getElementById('url');
+const file = document.querySelectorAll('#file');
+const url = document.querySelectorAll('#url');
 const trainingMaterial = document.getElementById('training_material');
 const footer = document.getElementById('footer');
 const header = document.querySelector('.right_section .header.flex_row.space_between');
 const videoSection = document.querySelector('.video_section.flex_row.width_full');
+const videoSectionEdit = document.querySelector('.video_section.edit.flex_row.width_full');
 const additionalInfo = document.querySelector('.additional_info.flex_row.width_full');
 const popup = document.querySelector('.popup.flex_column');
 const modulePopup = document.querySelector('.popup.module');
@@ -23,6 +24,7 @@ function selectTab(e) {
         footer.style.display = 'none';
         trainingMaterial.style.display = 'flex';
         videoSection.style.display = 'none';
+        videoSectionEdit.style.display = 'none';
         additionalInfo.style.display = 'none';
         // document.querySelector('.training_material.flex_column.width_full').style.display = 'flex';
         console.log(header);
@@ -38,23 +40,36 @@ function selectTab(e) {
     }
 }
 
-file.addEventListener('click', () => {
-    uploadType.innerHTML = `
-        <p>Select File</p>
-        <button>Upload File</button>
-    `;
+file.forEach(fileElement => {
+    fileElement.addEventListener('click', (e) => {
+        console.log('Clicked');
+        e.currentTarget.parentElement.parentElement.nextElementSibling.innerHTML = `
+            <p>Select File</p>
+            <button>Upload File</button>
+        `;
+    });
 });
 
-url.addEventListener('click', () => {
-    uploadType.innerHTML = `
-        <input type="text" placeholder="Add Title">
-    `;
+url.forEach(urlElement => {
+    urlElement.addEventListener('click', (e) => {
+        e.currentTarget.parentElement.parentElement.nextElementSibling.innerHTML = `
+            <input type="text" placeholder="Add Title">
+        `;
+    });
 });
+
 
 function showAdditionalInfo(e, action) {
     if (action === 'next') {
         videoSection.style.display = 'none';
+        videoSectionEdit.style.display = 'none';
         additionalInfo.style.display = 'flex';
+    } else if (action === 'edit') {
+        videoSectionEdit.style.display = 'flex';
+        document.querySelector('.training_material.flex_row.width_full').style.display = 'none';
+        additionalInfo.style.display = 'none';
+        if (!e.currentTarget.classList.contains('nonEdit')) videoSectionEdit.querySelector('#title').value = e.currentTarget.previousElementSibling.querySelector('p').innerText;
+        else videoSectionEdit.querySelector('#title').value = '';
     } else {
         videoSection.style.display = 'flex';
         document.querySelector('.training_material.flex_row.width_full').style.display = 'none';
@@ -136,7 +151,7 @@ function createEntry(e) {
             <img src="../images/source_black.png" alt="">
             <p>${ name }</p>
         </div>
-        <button onclick="showAdditionalInfo(event, 'video')"><img src="../images/edit_black.png" alt=""></button>
+        <button onclick="showAdditionalInfo(event, 'edit')"><img src="../images/edit_black.png" alt=""></button>
     </div>
     `;
 
