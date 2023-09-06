@@ -377,40 +377,55 @@
                                 <img src="../images/plus_gray.png" alt="Add module" onclick="showTrainingPopups(event, 'module')">
                             </div>
                             <div class="tabs flex_column">
-                                <div class="tab flex_row space_between">
-                                    <div class="tab_left_side flex_row center">
-                                        <img src="../images/remove_black.png" alt="">
-                                        <p>Season (1)</p>
+                                <div class="tab_container flex_column">
+                                    <div class="tab flex_row space_between">
+                                        <div class="tab_left_side flex_row center">
+                                            <img src="../images/remove_black.png" alt="">
+                                            <p id="module_name">Season (1)</p>
+                                        </div>
+                                        <img src="../images/plus_gray.png" alt="Add module" onclick="showTrainingPopups(event, 'category')">
                                     </div>
-                                    <img src="../images/plus_gray.png" alt="Add module" onclick="showTrainingPopups(event, 'category')">
+                                    <img src="../images/plus_gray.png" alt="Add Video" onclick="showTrainingPopups(event, 'module_video')">
                                 </div>
-                                <div class="tab flex_row space_between">
-                                    <div class="tab_left_side flex_row center">
-                                        <img src="../images/remove_black.png" alt="">
-                                        <p>Introduction</p>
+                                <div class="tab_container flex_column">
+                                    <div class="tab flex_row space_between">
+                                        <div class="tab_left_side flex_row center">
+                                            <img src="../images/remove_black.png" alt="">
+                                            <p>Introduction</p>
+                                        </div>
+                                        <img src="../images/plus_gray.png" alt="Add module" onclick="showTrainingPopups(event, 'subcategory')">
                                     </div>
-                                    <img src="../images/plus_gray.png" alt="Add module" onclick="showTrainingPopups(event, 'subcategory')">
+                                    <img src="../images/plus_gray.png" alt="Add Video" onclick="showTrainingPopups(event, 'category_video')">
                                 </div>
-                                <div class="tab flex_row space_between">
-                                    <div class="tab_left_side flex_row center">
-                                        <img src="../images/source_black.png" alt="">
-                                        <p>About</p>
+                                <div class="tab_container flex_column">
+                                    <div class="tab flex_row space_between">
+                                        <div class="tab_left_side flex_row center">
+                                            <img src="../images/source_black.png" alt="">
+                                            <p>About</p>
+                                        </div>
+                                        <button onclick="showAdditionalInfo(event, 'edit')"><img src="../images/edit_black.png" alt=""></button>
                                     </div>
-                                    <button onclick="showAdditionalInfo(event, 'edit')"><img src="../images/edit_black.png" alt=""></button>
+                                    <img src="../images/plus_gray.png" alt="Add Video" onclick="showTrainingPopups(event, 'subcategory_video')">
                                 </div>
-                                <div class="tab flex_row space_between">
-                                    <div class="tab_left_side flex_row center">
-                                        <img src="../images/source_black.png" alt="">
-                                        <p>Fundamentals</p>
+                                <div class="tab_container flex_column">
+                                    <div class="tab flex_row space_between">
+                                        <div class="tab_left_side flex_row center">
+                                            <img src="../images/source_black.png" alt="">
+                                            <p>Fundamentals</p>
+                                        </div>
+                                        <button onclick="showAdditionalInfo(event, 'edit')"><img src="../images/edit_black.png" alt=""></button>
                                     </div>
-                                    <button onclick="showAdditionalInfo(event, 'edit')"><img src="../images/edit_black.png" alt=""></button>
+                                    <img src="../images/plus_gray.png" alt="Add Video" onclick="showTrainingPopups(event, 'subcategory_video')">
                                 </div>
-                                <div class="tab flex_row space_between">
-                                    <div class="tab_left_side flex_row center">
-                                        <img src="../images/source_black.png" alt="">
-                                        <p>Techniques</p>
+                                <div class="tab_container flex_column">
+                                    <div class="tab flex_row space_between">
+                                        <div class="tab_left_side flex_row center">
+                                            <img src="../images/source_black.png" alt="">
+                                            <p>Techniques</p>
+                                        </div>
+                                        <button  onclick="showAdditionalInfo(event, 'edit')"><img src="../images/edit_black.png" alt=""></button>
                                     </div>
-                                    <button  onclick="showAdditionalInfo(event, 'edit')"><img src="../images/edit_black.png" alt=""></button>
+                                    <img src="../images/plus_gray.png" alt="Add Video" onclick="showTrainingPopups(event, 'subcategory_video')">
                                 </div>
                             </div>
                         </div>
@@ -536,6 +551,17 @@
                     </div>
                     <div class="buttons flex_row center">
                         <button onclick="createEntry(event)">Create</button>
+                        <button onclick="event.currentTarget.parentElement.parentElement.style.display = 'none'">Reset</button>
+                    </div>
+                </div>
+                <div class="popup video">
+                    <h1>Add Module Video</h1>
+                    <div class="input flex_column">
+                        <p>Module Video</p>
+                        <input type="file">
+                    </div>
+                    <div class="buttons flex_row center">
+                        <button onclick="createVideo(event)">Create</button>
                         <button onclick="event.currentTarget.parentElement.parentElement.style.display = 'none'">Reset</button>
                     </div>
                 </div>
