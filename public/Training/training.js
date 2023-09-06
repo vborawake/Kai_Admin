@@ -162,7 +162,10 @@ function createEntry(e) {
                 <img src="../images/remove_black.png" alt="">
                 <p id='module_name'>${ name }</p>
             </div>
-            <img src="../images/plus_gray.png" onclick="showTrainingPopups(event, 'category')" alt="Add module">
+            <div class="tab_right_side flex_row center">
+                <img src="../images/plus_gray.png" alt="Add module" onclick="showTrainingPopups(event, 'category')">
+                <img src="../images/delete_outline_black_24dp 1.png" alt="Delete module">
+            </div>
         </div>
         <img src="../images/plus_gray.png" alt="Add Video" onclick="showTrainingPopups(event, 'module_video')">
     </div>
